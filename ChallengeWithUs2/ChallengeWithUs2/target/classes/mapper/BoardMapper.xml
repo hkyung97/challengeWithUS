@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.home.dao.BoardDAO">
+
+	<insert id="boardWriteOk" parameterType="com.smart.home.dto.QaBoardFileDTO">
+		insert into QABoard(qano, qatitle, qacontent, qahit, qadate)
+		values(QANO_SEQ.nextval, #{qaTitle}, #{qaContent}, 0, sysdate)
+	<!-- 현재 insert에서 생성된 시퀀스 번호를 dto의 no에 setter하기 -->
+ 		<selectKey resultType = "int" keyProperty = "qaNo" order = "AFTER">
+ 			select QANO_SEQ.currval from dual
+ 		</selectKey>
+ 	</insert>
+ 	
+ 	<!-- 업로드 파일 목록을 insert -->
+ 	<insert id = "qaboardfileInsert" parameterType = "java.util.List">
+ 	<foreach item="item" collection="list" open="insert all"
+ 			separator=" " close="select * from dual">
+ 		into data_file(qafileNo, qaNo, qafileName)
+ 		values(QAFILENO_SEQ.nextval, #{item.qaNo}, #{item.qafileName})
+ 	</foreach>
+	</insert>
+	
+	 <!-- 첨부파일 목록 지우기 -->
+ 	<delete id="qaboardfileDelete">
+ 		delete from qaboardfile where qano=${param1}
+ 	</delete>
+ 	
+ 	<!-- 1개 레코드 -->
+ 	<select id = "boardSelect" resultType = "com.smart.home.dto.BoardDTO">
+ 		select qaNo, qatitle, qacontent, qahit, qadate
+ 		from qaboard where qano = ${param1}
+ 	</select>
+
+ 	<!-- 파일 목록 가져오기 -->
+ 	<select id = "qaboardfileSelect" resultType="com.smart.home.dto.QaBoardFileDTO">
+ 		select qaNo, QAFILENAME from qaboardfile where qano = ${param1}
+ 	</select>
+ 	<update id = "boardEdit">
+ 		update qaboard set qatitle = #{qaTitle}, qacontent = #{qaContent}
+ 		where qano = ${qaNo}
+ 	</update>
+	
+	<select id="boardList" resultType="com.smart.home.dto.BoardDTO">
+		select * from (
+			select * from (
+				select qano, qatitle, memberid, qahit,
+				to_char(qadate,'MM-DD HH:MI') qadate
+				from QABoard
+				<!-- 검색어가 있을 때 -->
+				<if test="searchWord!=null">
+					where ${searchKey} like '%${searchWord}%'
+				</if>
+				order by qano desc
+			)
+			where <![CDATA[rownum <= ${nowPage*onePageRecord}]]> order by qano asc
+		)
+		where <![CDATA[rownum <= ${lastPageRecord}]]> order by qano desc
+	</select>
+
+	<select id="totalRecord" resultType="int">
+		select count(qano) cnt from QABoard
+		<if test="searchWord != null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>
+	</select>
+
+
+	<update id="hitCount">
+		update QABoard set qahit = qahit + 1 where qano = #{param1}
+	</update>
+
+			<!-- ''안붙으면 ${} -->
+
+	<delete id="boardDel">
+		delete from QABoard where qano = #{param1}
+	</delete>
+</mapper>
