@@ -6,9 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 첨부파일 test-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
 </head>
 <body>
-<header>
-	
-</header>
+
+<nav>
+<ul>
+	<li><a href = "/prac/register/login">로그인</a></li>
+	<li><a href = "/prac/register/regForm">회원가입</a></li>
+	<li><a href = "/home/board/boardList">게시판</a></li>
+	<li><a href = "/prac/register/#">자료실</a></li>		
+</ul>
+</nav>

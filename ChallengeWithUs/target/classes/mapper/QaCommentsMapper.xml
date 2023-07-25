@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace = "com.smart.home.dao.QaCommentsDAO">
+	<insert id="qacommentsInsert">
+	    insert into qacomments(qacommentNo, qaNo, qacommentContent, memberid, qacommentDate)
+	    values(QACOMMENTNO_SEQ.nextval, ${qaNo}, #{qacommentContent}, #{memberId}, sysdate)
+	</insert>
+
+ 	<select id = "qacommentsSelect" resultType = "com.smart.home.dto.QaCommentsDTO">
+ 		select qacommentNo, qacommentContent,memberid, qacommentDate
+ 		from qacomments where qaNo=${param1}
+ 		order by qacommentNo desc
+ 	</select>
+	<update id="qacommentsUpdate">
+	    update qacomments set qacommentContent=#{qacommentContent} where qacommentNo=${qacommentNo}
+	</update>
+	<delete id="qacommentsDelete">
+	    delete from qacomments where qacommentNo=${param1}
+	</delete>
+
+ </mapper>
