@@ -21,9 +21,9 @@ public class QaCommentsController {
 
     // 댓글등록
     @PostMapping("/qacomments/qacommentsWrite")
-    public String qacommentsWrite(QaCommentsDTO dto) {
+    public String qacommentsWrite(QaCommentsDTO dto, HttpSession session) {
         // session글쓴이 구하기
-        // dto.setUserid((String)session.getAttribute("logId"));
+        dto.setMemberId((String)session.getAttribute("logId"));
         System.out.println(dto.toString());
         
         int result = service.qacommentsInsert(dto);
@@ -32,8 +32,8 @@ public class QaCommentsController {
 
     // 댓글목록
     @GetMapping("/qacomments/qacommentsList")
-    public List<QaCommentsDTO> qacommentsList(int qaNO) { // 원글 글 번호
-        return service.qacommentsSelect(qaNO);
+    public List<QaCommentsDTO> qacommentsList(int qaNo) { // 원글 글 번호
+        return service.qacommentsSelect(qaNo);
     }
 
     @PostMapping("/qacomments/qacommentsEditOk")

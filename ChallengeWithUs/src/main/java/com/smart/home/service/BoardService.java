@@ -11,7 +11,7 @@ public interface BoardService {
 	public int totalRecord(PagingDTO pDTO);
 	public void hitCount(int no);
 	public int boardEdit(BoardDTO dto);
-	public int boardDel(int no);
+	public int boardDel(int no, String memberId);
 	public int qaboardfileDelete(int no);
 	public List<QaBoardFileDTO> qaboardfileSelect(int no);
 	public int qaboardfileInsert(List<QaBoardFileDTO> fileList);

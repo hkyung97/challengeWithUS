@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.challenge-registration {
+    width: 1200px;
+    height: 100px;
+    position: relative;
+    top:50px;
+    left: 100px;
+    background: white;
+    box-shadow: 8px 13px 44px -6px #DFDBF6;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+
+.ellipse5 {
+    width: 309px;
+    height: 309px;
+    left: 450px;
+    top: -1px;
+    position: absolute;
+    background: rgba(79, 212, 139, 0.50);
+    border-radius: 9999px;
+}
+
+.center {
+    width: 247px;
+    height: 175px;
+    left: 481px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    display: inline-flex;
+}
+
+.challenge-title {
+    width: 312px;
+    flex: 1 1 0;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+form{
+	display: flex; 
+	justify-content: center; 
+	
+}
+
+ul{ 
+	width: 662px;
+    height: 634px;
+	position: relative;
+	top:50px;
+	
+}
+
+
+
+.box-title {
+    width: 507.46px;
+    height: 44.53px;
+    left: 100px;
+    top: 0px;
+    margin: 10px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px #3366FF solid;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.box-botton-text {
+    width: 461px;
+    height: 52px;
+    left: 180px; 
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px #3366FF solid;
+    background-color: #3366FF;
+    position: relative;
+}
+
+
+li {
+	list-style: none; 
+	
+    
+	
+}
+
+span {
+	color:#3366FF; ;
+	font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    text-align: right;
+}
+
+
+
+

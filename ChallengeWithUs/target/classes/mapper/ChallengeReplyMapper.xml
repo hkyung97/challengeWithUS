@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.home.dao.ChallengeReplyDAO">
+	<insert id="ChallengeReplyInsert">
+		insert into challengecomments(chalcommentNo, chalNo,
+		memberId, chalcommentContent,
+		chalcommentDate)
+		values(chalcommentNo_seq.nextval, ${chalNo}, #{memberId},
+		#{chalcommentContent},
+		sysdate)
+	</insert>
+
+	<select id="ChallengeReplyList"
+		resultType="com.smart.home.dto.ChallengeReplyDTO">
+		select chalcommentNo, chalcommentContent, memberId,
+		chalcommentDate
+		from challengecomments where chalNo=${param1}
+		order by
+		chalcommentNo desc
+	</select>
+
+	<update id="ChallengeReplyEditOk">
+		update challengecomments set chalcommentContent=#{chalcommentContent}
+		where chalcommentNo=${chalcommentNo}
+	</update>
+	
+	<delete id="ChallengeReplyDel">
+  		delete from challengecomments
+  		where chalcommentNo=${param1} and 
+  	</delete>
+</mapper>

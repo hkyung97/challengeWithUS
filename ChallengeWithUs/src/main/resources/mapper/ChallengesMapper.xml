@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.home.dao.ChallengesDAO">
+
+	<select id="ChallengesList"
+		resultType="com.smart.home.dto.ChallengesDTO">
+
+		SELECT *
+		FROM (
+		SELECT chalno, chaltitle, chalcontent, chalfilename,
+		memberid
+		FROM
+		challenges
+		where chalstatus = '1'
+		<if test="searchWord!=null">
+			and ${searchKey} like '%' || #{searchWord} || '%'
+		</if>
+		ORDER BY chalno DESC
+		)
+		WHERE <![CDATA[rownum <= ${nowPage * onePageRecord}]]>
+	</select>
+
+	<select id="ChallengesTotalRecord" resultType="int">
+		select count(chalno) cnt from challenges
+		<if test="searchWord!=null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>
+	</select>
+
+	<select id="ChallengesListMore"
+		resultType="com.smart.home.dto.ChallengesDTO">
+
+		SELECT *
+		FROM (
+		SELECT chalno, chaltitle, chalcontent,
+		chalfilename,
+		memberid
+		FROM
+		challenges
+		WHERE chalstatus = '1' AND <![CDATA[chalno < ${lastNo}]]>
+		<if test="searchWord!=null">
+			AND ${searchKey} like '%' || #{searchWord} || '%'
+		</if>
+		ORDER BY chalno DESC
+		)
+		WHERE <![CDATA[rownum <= 5]]>
+		ORDER BY chalno DESC
+
+	</select>
+
+	<insert id="ChallengeInsert"
+		parameterType="com.smart.home.dto.ChallengesDTO">
+		insert into challenges(chalno, memberid, chaltitle,
+		chalcontent, chalfee, chalstartdate, chalenddate, chalFilename)
+		values
+		(chalno_seq.nextval, #{memberId}, #{chalTitle}, #{chalContent},
+		${chalFee}, #{chalstartDate}, #{chalendDate}, #{chalFilename})
+	</insert>
+
+	<select id="ChallengeSelect"
+		resultType="com.smart.home.dto.ChallengesDTO">
+		select chalno, memberid, chaltitle, chalcontent,
+		ParticipantsCnt, chalstartdate, chalenddate, chalFee, chalFileName
+		from challenges where chalno=${param1}
+	</select>
+
+	<select id="ChallengeFileSelect" resultType="String">
+		select chalfilename
+		from challenges
+		where chalno=${param1}
+	</select>
+
+	<update id="ChallengeUpdate">
+		update challenges set
+		memberid=#{memberId},
+		chaltitle=#{chalTitle},
+		chalcontent=#{chalContent},
+		chalfee=${chalFee},
+		chalstartdate=#{chalstartDate},
+		chalenddate=#{chalendDate},
+		chalFilename=#{chalFilename}
+		where chalno=#{chalNo}
+	</update>
+
+	<delete id="ChallengeDelete">
+		delete from challenges
+		where chalNo=${param1}
+	</delete>
+
+	<select id="ChallengePartCheck" resultType="int">
+		select count(*) from
+		MemberAchievement
+		where chalno=${param1} and memberid=#{param2}
+	</select>
+
+	<insert id="ChallengePart">
+		insert into MemberAchievement
+		values(MemberAchievementNo_seq.nextval, #{param2}, ${param1}, 0)
+	</insert>
+
+	<update id="UpdateFeePartCnt">
+		update challenges set
+		ParticipantsCnt=ParticipantsCnt+1,
+		ChalTotalFee=ChalTotalFee+ChalFee
+		where chalno=${param1}
+	</update>
+
+	<select id="GetParticipantsCnt" resultType="int">
+		select ParticipantsCnt from challenges
+		where chalno=${param1}
+	</select>
+
+	<select id="GetDeposit" resultType="int">
+		select MemberDeposit from members
+		where memberid=#{logId}
+	</select>
+	
+	<update id="UpdateDeposit">
+	update members set MemberDeposit=${param2}
+	where memberid=#{param1}
+	</update>
+</mapper>

@@ -1,8 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<footer>
-	Copyright
-</footer>
-</body>
+    <div class="footer ${className}">
+        <div class="div">
+            <img class="logo" alt="Logo" src="<%= request.getContextPath() %>/imgs/logo.png" />
+            <div class="frame">
+                <div class="frame-2">
+                    <div class="text-wrapper"><a href="/home">Home</div>
+                    <div class="text-wrapper"><a href="/home/board">Q&A</a></div>
+                    <div class="text-wrapper">Contact</div>
+                </div>
+            </div>
+            <div class="copyrights-wrapper">
+                <div class="copyrights">(주)자바칩프라푸치노</div>
+            </div>
+        </div>
+    </div>
+
 </html>

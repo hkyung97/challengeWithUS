@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.home.dao.DepositDAO">
+
+    <!-- 예치금 잔액 조회 쿼리 -->
+    <select id="getMyBalance" parameterType="string" resultType="int">
+        SELECT MemberDeposit
+        FROM Members
+        WHERE MemberId = #{memberId}
+    </select>
+
+    <!-- 예치금 거래 내역 조회 쿼리 -->
+    <select id="getMyDepositTransactions" parameterType="string" resultType="com.smart.home.dto.DepositDTO">
+        SELECT *
+        FROM DepositTransactions
+        WHERE MemberId = #{memberId}
+    </select>
+    
+<!--     <insert id="chargeMyDeposit" parameterType="" resultType="int">
+    
+     
+    </insert> -->
+    
+</mapper>
+  

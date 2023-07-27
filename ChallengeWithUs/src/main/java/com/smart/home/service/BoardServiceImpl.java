@@ -38,18 +38,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int boardDel(int no) {
-		return dao.boardDel(no);
+	public int boardDel(int no, String memberId) {
+		return dao.boardDel(no, memberId);
 	}
 
 	@Override
 	public int totalRecord(PagingDTO pDTO) {
 		return dao.totalRecord(pDTO);
-	}
-
-	@Override
-	public int qaboardfileDelete(int no) {
-		return dao.qaboardfileDelete(no);
 	}
 
 	@Override
@@ -67,9 +62,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.boardSelect(no);
 	}
 
-
-
-
+	@Override
+	public int qaboardfileDelete(int no) {
+		return dao.qaboardfileDelete(no);
+	}
 
 	
 }

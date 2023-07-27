@@ -8,4 +8,5 @@ public class QaCommentsDTO {
 	private int qaNo;
 	private String qacommentContent;
 	private String qacommentDate;
+	private String memberId;
 }

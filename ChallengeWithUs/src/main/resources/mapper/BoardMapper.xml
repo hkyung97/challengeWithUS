@@ -5,8 +5,8 @@
 <mapper namespace="com.smart.home.dao.BoardDAO">
 
 	<insert id="boardWriteOk" parameterType="com.smart.home.dto.QaBoardFileDTO">
-		insert into QABoard(qano, qatitle, qacontent, qahit, qadate)
-		values(QANO_SEQ.nextval, #{qaTitle}, #{qaContent}, 0, sysdate)
+		insert into QABoard(qano, qatitle, qacontent, memberid, qahit, qadate)
+		values(QANO_SEQ.nextval, #{qaTitle}, #{qaContent}, #{memberId}, 0, sysdate)
 	<!-- 현재 insert에서 생성된 시퀀스 번호를 dto의 no에 setter하기 -->
  		<selectKey resultType = "int" keyProperty = "qaNo" order = "AFTER">
  			select QANO_SEQ.currval from dual
@@ -17,7 +17,7 @@
  	<insert id = "qaboardfileInsert" parameterType = "java.util.List">
  	<foreach item="item" collection="list" open="insert all"
  			separator=" " close="select * from dual">
- 		into data_file(qafileNo, qaNo, qafileName)
+ 		into qaboardfile(qafileNo, qaNo, qafileName)
  		values(QAFILENO_SEQ.nextval, #{item.qaNo}, #{item.qafileName})
  	</foreach>
 	</insert>
@@ -29,13 +29,13 @@
  	
  	<!-- 1개 레코드 -->
  	<select id = "boardSelect" resultType = "com.smart.home.dto.BoardDTO">
- 		select qaNo, qatitle, qacontent, qahit, qadate
+ 		select qaNo, memberid, qatitle, qacontent, qahit, qadate
  		from qaboard where qano = ${param1}
  	</select>
 
  	<!-- 파일 목록 가져오기 -->
  	<select id = "qaboardfileSelect" resultType="com.smart.home.dto.QaBoardFileDTO">
- 		select qaNo, QAFILENAME from qaboardfile where qano = ${param1}
+ 		select qaNo, qafileName from qaboardfile where qano = ${param1}
  	</select>
  	<update id = "boardEdit">
  		update qaboard set qatitle = #{qaTitle}, qacontent = #{qaContent}
@@ -74,6 +74,6 @@
 			<!-- ''안붙으면 ${} -->
 
 	<delete id="boardDel">
-		delete from QABoard where qano = #{param1}
+		delete from QABoard where qano = #{param1} and memberId = #{param2}
 	</delete>
 </mapper>

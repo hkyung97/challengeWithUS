@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.home.dao.MemberAchievementDAO">
+
+    <select id="getMemberGrade" parameterType="string" >
+        SELECT * 
+        FROM UserGrade
+        WHERE MemberId = #{memberId}
+    </select>
+    
+
+	<update id="updateMemberGrade" parameterType="string">
+	    UPDATE Members
+	    SET MemberGradeName = CASE
+	        WHEN (SELECT COUNT(*) FROM MemberAchievement WHERE MemberId = #{memberId} AND AchievementRate >= 85) >= 10 THEN 'Leader'
+	        ELSE 'Basic'
+	        END
+	    WHERE MemberId = #{memberId}
+	</update>
+	
+
+    <delete id="deleteMemberGrade" parameterType="string">
+        DELETE 
+        FROM UserGrade
+        WHERE MemberId = #{memberId}
+    </delete>
+
+ 
+    <select id="getMyAchievements" parameterType="string" >
+        SELECT AchievementRate
+        FROM MemberAchievement
+        WHERE MemberId = #{memberId}
+    </select>
+    
+	
+	<select id="getMyAchievementCnt" parameterType="string" >
+		SELECT mem.memberid, mem.membergradename,
+		   (SELECT COUNT(*)
+		    FROM MEMBERACHIEVEMENT a
+		    JOIN challenges c ON a.chalno = c.chalno
+		    WHERE a.memberId = mem.memberId
+		      AND c.CHALENDDATE > TO_CHAR(SYSDATE, 'YYYYMMDD')
+		      AND a.achievementrate > 85
+		   ) AS achievement_count
+		FROM members mem;
+	</select>
+</mapper>

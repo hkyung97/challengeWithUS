@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.home.dao.MemberDAO">
+	<insert id="MemberInsert">
+		insert into Members(MemberId, MemberPwd, MemberAddr,
+		MemberEmail, MemberName, MemberTel, MemberBirth, MemberGender,
+		MemberGradeName)
+		values(#{memberId}, #{memberPwd}, #{memberAddr},
+		#{memberEmail}, #{memberName},
+		#{memberTel}, #{memberBirth},
+		#{memberGender}, 'new')
+	</insert>
+
+	<select id="loginOk" resultType="com.smart.home.dto.MemberDTO">
+		select memberid, membername from
+		members
+		where memberid=#{param1} and memberpwd=#{param2}
+	</select>
+
+	<select id="findId" resultType="String">
+		select memberid from members
+		where memberName=#{param1} and memberEmail=#{param2}
+	</select>
+
+	<select id="dupChk" resultType="String">
+		select memberid from members
+		where memberid=#{param1}
+	</select>
+
+	<select id="findPwd" resultType="String">
+		select memberPwd from members
+		where memberid=#{param1} and memberEmail=#{param2}
+	</select>
+
+	<select resultType="com.smart.home.dto.MemberDTO" id="getMember">
+		select
+		MemberId, MemberName, MemberGender,
+		MemberPwd, MemberEmail, MemberTel,
+		MemberAddr, MemberBirth
+		from members where memberid=#{param1}
+	</select>
+
+	<update id="memberUpdate">
+		update members set 
+		MemberPwd = #{memberPwd},
+		MemberAddr = #{memberAddr},
+		MemberEmail = #{memberEmail},
+		MemberName = #{memberName},
+		MemberTel = #{memberTel},
+		MemberBirth = #{memberBirth},
+		MemberGender = #{memberGender}
+		where MemberId = #{memberId}
+	</update>
+</mapper>

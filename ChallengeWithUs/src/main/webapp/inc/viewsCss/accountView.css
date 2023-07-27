@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+body{
+	margin: 0px;
+	width:100%; 
+	display:flex; 
+	flex-direction: column; 
+	align-content: center;
+	align-items: center;
+	
+	
+}
+
+.deposit-management {
+  width: 1200px;
+  height: 100px;
+  position: relative;
+  background: white;
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.Ellipse5 {
+  width: 309px;
+  height: 309px;
+  position: absolute;
+  top: -1px;
+  left: 450px;
+  background: rgba(79, 212, 139, 0.50);
+  border-radius: 9999px;
+}
+
+.center {
+  width: 247px;
+  height: 100px;
+  position: absolute;
+  top: -38px;
+  left: 481px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  position: absolute; 
+  width: 312px;
+  top: 50px; 
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  color: black;
+}
+
+
+.account-container {
+  width: 1200px;
+  height: 250px;
+  position: relative;
+  background: white;
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.account-LatestTransaction {
+  height: 156px;
+  left: 463px;
+  top: 52px;
+  position: absolute;
+}
+
+.account-LatestTransaction .amount {
+  width: 275px;
+  height: 89.40px;
+  left: 0px;
+  top: 66.60px;
+  position: absolute;
+  text-align: center;
+  color: #4FD18B;
+  font-size: 60px;
+  font-family: Noto Sans KR;
+  font-weight: 900;
+  word-wrap: break-word;
+}
+
+.account-LatestTransaction .type {
+  width: 210.95px;
+  height: 57.88px;
+  left: 32px;
+  top: 0px;
+  position: absolute;
+  text-align: center;
+  color: #A1A0BD;
+  font-size: 50px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.account-WalletAmount {
+  width: 300px;
+  padding-top: 105px;
+  padding-bottom: 105px;
+  padding-left: 24px;
+  padding-right: 80px;
+  left: 967px;
+  top: -27px;
+  position: absolute;
+  background: #1C43BE;
+  border-radius: 155px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.account-WalletAmount .charge-text {
+  color: white;
+  font-size: 50px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.account-WalletAmount .challenge-text {
+  opacity: 0.50;
+  color: white;
+  font-size: 15px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.55px;
+  word-wrap: break-word;
+}
+
+.account-Ellipse5 {
+  width: 309px;
+  height: 309px;
+  left: -31px;
+  top: -132px;
+  position: absolute;
+  background: rgba(51, 102, 255, 0.50);
+  border-radius: 9999px;
+}
+
+.LeftSide {
+  width: 189px;
+  height: 107px;
+  left: 30px;
+  top: 23px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  display: inline-flex;
+}
+
+.LeftSide .username {
+  color: black;
+  font-size: 60px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+

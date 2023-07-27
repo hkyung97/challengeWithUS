@@ -1,0 +1,339 @@
+body{
+	margin: 0px;
+	width:100%; 
+	display:flex; 
+	flex-direction: column; 
+	align-content: center;
+	align-items: center;
+	
+	
+}
+
+
+.Wrapper {
+  display: flex;
+  align-content: center;
+  width: 1200px;
+  height: 296px;
+  position: relative;
+  background: white;
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 24px; 
+  margin: 24px; 
+}
+
+/* Styling for the LatestTransaction div */
+.LatestTransaction1 {
+  height: 69.74px;
+  position: absolute;
+  top: 170px;
+  left:300px; 
+
+}
+
+.LatestTransaction2 {
+  height: 69.74px;
+  position: absolute;
+  top: 170px;
+  left:600px; 
+
+}
+
+/* Styling for the Label and Date inside LatestTransaction div */
+.Label, .Date {
+  font-size: 25px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.Label {
+  color: #A1A0BD;
+}
+
+.Date {
+  color: #4FD18B;
+  font-size: 40px;
+}
+
+/* Styling for the WalletAmount div */
+.WalletAmount-top {
+  width: 410px;
+  height: 374px;
+  position: absolute;
+  left: 926px;
+  top: -22px;
+  background: #1C43BE;
+  border-radius: 155px;
+}
+
+/* Styling for the SmhrdId and Membership inside WalletAmount div */
+.SmhrdId, .Membership {
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.SmhrdId {
+  left: 47px;
+  top: 80px;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.Membership {
+  left: 82px;
+  top: 226px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Styling for the Ellipse5 div */
+.Ellipse5 {
+  width: 309px;
+  height: 309px;
+  left: -31px;
+  top: -109px;
+  position: absolute;
+  background: rgba(51, 102, 255, 0.50);
+  border-radius: 9999px;
+}
+
+
+
+/* Styling for the ChallengeTitle inside LeftSide div */
+.ChallengeTitle {
+  color: black;
+  position: absolute;
+  top:30px;
+  left: 30px;
+  font-size: 50px;
+  font-weight: 700;
+  
+}
+
+
+.Group4 {
+  width:1200px;
+  height: 433px;
+  display: flex;
+  position: relative;
+  background-color: transparent;
+  padding:  24px; 
+  margin: 24px; 
+  
+}
+
+.Group3 {
+  width: 194px;
+  height: 89px;
+  position: absolute;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.total-participants {
+  left: 660px;
+  top: 250px;
+  color: black;
+}
+
+.participants-count {
+  height: 66px;
+  top: 23px;
+  position: absolute;
+}
+
+.text-wrapper {
+  height: 23px;
+  left: 24px;
+  top: 0px;
+  position: absolute;
+  color: #A1A0BD;
+  font-size: 25px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+
+.participation-fee {
+  width: 227px;
+  left: 933px;
+  top: 250px;
+  color: black;
+}
+
+.participation-fee-amount {
+  height: 66px;
+  top: 23px;
+  position: absolute;
+}
+
+.Image2 {
+  width: 612px;
+  height: 433px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+.challenge-description {
+  width: 540px;
+  height: 235px;
+  left: 652px;
+  top: 0px;
+  position: absolute;
+  color: #121212;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.30px;
+}
+
+.Box {
+  width: 486px;
+  height: 45px;
+  padding: 10px;
+  left: 674px;
+  top: 370px;
+  position: absolute;
+  background-color: #3366FF;
+  border-radius: 10px;
+  border: 1px #3366FF solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.challenge-btn {
+  width: 461px;
+  height: 52px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 900;
+  border: 0;
+  background-color: transparent;
+}
+
+.Group5 {
+  width: 1200px;
+  height: 486px;
+  position: relative;
+  top: 24px; 
+  display: flex;
+  padding:  24px; 
+
+}
+
+.file-upload {
+  width: 488px;
+  height: 122px;
+  position: absolute;
+  top: 364px;
+  background: rgba(79, 209, 139, 0.50);
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.challenge-authentication {
+
+  width: 488px;
+  height: 122px;
+  position: absolute;
+  top: 364px;
+  left: 680px; 
+  background: rgba(79, 209, 139, 0.50);
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+	
+	
+}
+
+
+.WalletAmount {
+  width: 300px;
+  height: 304px;
+  position: absolute;
+  top: -91px;
+  left: 238px;
+  background: rgba(51, 102, 255, 0.50);
+  border-radius: 155px;
+}
+
+.instruction-title {
+  width: 338px;
+  position: absolute;
+  top: 17px;
+  left: 75px;
+  font-size: 60px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  color: black;
+}
+
+ .Group7 {
+  width: 486px;
+  height: 227px;
+  position: absolute;
+  top: 77px;
+}
+
+.Group8 {
+  width: 486px;
+  height: 227px;
+  position: absolute;
+  top: 77px;
+  left: 680px; 
+	
+}
+
+.instruction-content {
+  width: 448px;
+  height: 72px;
+  position: absolute;
+  top: 155px;
+  left: 38px;
+  text-align: right;
+  font-size: 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  color: black;
+}
+
+.step-number {
+  width: 272px;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 100px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  color: #3366FF;
+}
+
+.instruction-heading {
+  width: 408px;
+  height: 38px;
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  font-size: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  color: #4FD18B;
+}

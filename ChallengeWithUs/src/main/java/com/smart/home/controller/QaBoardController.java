@@ -61,12 +61,12 @@ public class QaBoardController {
 	      // HttpServletRequest -> request, HttpSession
 	      // HttpSession -> Session만
 		   
-	
-		   
 	  String path = request.getSession().getServletContext().getRealPath("/upload");
-	  System.out.println("path->" + path);
 	  
+	  System.out.println("path->" + path);
 	  System.out.println(dto.toString());
+	  dto.setMemberId((String)request.getSession().getAttribute("logId"));
+	  
 	  
 		//--------------------파일 업로드--------------------
 		//1. 파일 업로드를 위해서 request객체를 multipartRequest 객체로 형변환한다.
@@ -144,11 +144,13 @@ public class QaBoardController {
 		int resultFile = service.qaboardfileInsert(upFileList);
 	
 		//정상구현
-	mav.setViewName("redirect:boardList");
+		mav.setViewName("redirect:boardList");
+
+		
 	}catch(Exception e) {
 		e.printStackTrace();
 		//원글 지우기(dto.no)
-		service.boardDel(dto.getQaNo());
+		service.boardDel(dto.getQaNo(), dto.getMemberId());
 		//파일명 지우기(dto.no)
 		service.qaboardfileDelete(dto.getQaNo());
 		//파일 삭제(upFileList)
@@ -157,13 +159,13 @@ public class QaBoardController {
 		}
 		
 		//실패....
-		mav.setViewName("qaboard/qaboardResult");
+		mav.setViewName("qaboard/qaBoardResult");
 	}		
 		return mav;
 	}
 	//자료실 글 내용 보기
-	@GetMapping("/qaBoardView/{qaNo}")
-	public ModelAndView dataView(@PathVariable("qaNo") int no) {
+	@GetMapping("/qaBoardView")
+	public ModelAndView qaBoardView(int no, PagingDTO pDTO) {
 		ModelAndView mav = new ModelAndView();
 		//조회수
 		service.hitCount(no);
@@ -171,6 +173,7 @@ public class QaBoardController {
 		mav.addObject("dto", service.boardSelect(no));
 		//해당글의 첨부파일 선택
 		mav.addObject("fileList", service.qaboardfileSelect(no));
+		mav.addObject("pDTO", pDTO);
 		//뷰페이지
 		mav.setViewName("board/qaBoardView");
 		return mav;
@@ -190,8 +193,8 @@ public class QaBoardController {
 
 	//자료실 글 수정하기
 	   @PostMapping("/qaBoardEditOk") //no, subject, content, filename, delFile
-	   public ModelAndView dataEditOk(BoardDTO dto, HttpSession session, HttpServletRequest request) {
-	      
+	   public ModelAndView qaBoardEditOk(BoardDTO dto, HttpSession session, HttpServletRequest request) {
+		  dto.setMemberId((String)session.getAttribute("logId"));   
 	      //1. 기존에 업로드된 파일목록 DB에서 가져오기
 	      List<QaBoardFileDTO> orgFileList = service.qaboardfileSelect(dto.getQaNo());
 	      
@@ -202,7 +205,7 @@ public class QaBoardController {
 	      MultipartHttpServletRequest mr = (MultipartHttpServletRequest)request;
 	      
 	      //4. 업로드된 파일(MultipartFile)목록
-	      List<MultipartFile> fileList = mr.getFiles("filename");
+	      List<MultipartFile> fileList = mr.getFiles("qafileName");
 	      //새로 업로드한 파일명들
 	      List<QaBoardFileDTO> newFileList = new ArrayList<QaBoardFileDTO>();
 	      
@@ -278,7 +281,7 @@ public class QaBoardController {
 	            }//for
 	         }//if
 	         //글내용보기로 이동
-	         mav.setViewName("redirect:dataView/"+dto.getQaNo());
+	         mav.setViewName("redirect:qaBoardView?no="+dto.getQaNo());
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	         
@@ -287,14 +290,14 @@ public class QaBoardController {
 	            fileDelete(path, fDTO.getQafileName());
 	         }
 	         //글내용수정
-	         mav.setViewName("redirect:qaBoardEdit?no"+dto.getQaNo());
+	         mav.setViewName("redirect:qaBoardEdit?no="+dto.getQaNo());
 	      }
 	      return mav;
 	   }
 	   
 	   //자료실 글 삭제하기
-	   @GetMapping("/qaBoardDel")
-	   public ModelAndView dataDelete(int no, HttpSession session) {
+	   @GetMapping("/boardDel")
+	   public ModelAndView qaBoardDel(int no, HttpSession session) {
 		   //파일 삭제시 경로 필요함
 		   String path = session.getServletContext().getRealPath("/upload");
 		   
@@ -305,7 +308,7 @@ public class QaBoardController {
 		   int delCount = service.qaboardfileDelete(no);
 		   
 		   //3. 원글(DB삭제)
-		   int result = service.boardDel(no);
+			int result = service.boardDel(no, (String)session.getAttribute("logId"));
 		   
 		   //4. 첨부파일 삭제
 		   for(QaBoardFileDTO dto : fileList) {
@@ -315,9 +318,9 @@ public class QaBoardController {
 		   //5. 삭제시 글 목록으로 이동
 		   ModelAndView mav = new ModelAndView();
 		   if(result>0) {
-			   mav.setViewName("redirect:dataList");
+			   mav.setViewName("redirect:boardList");
 		   }else{//	실패시 글 내용 보기
-			   mav.setViewName("redirect:dataView/"+no);
+			   mav.setViewName("redirect:qaBoardView/"+no);
 		   }
 		   return mav;
 	   }

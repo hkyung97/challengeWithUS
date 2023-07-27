@@ -36,9 +36,6 @@
 			<a href="/home/board/qaBoardWrite">글쓰기</a>
 		</div>
 	</c:if>
-		<div>
-			<a href="/home/board/qaBoardWrite">글쓰기</a>
-		</div>
 	<div>총 레코드 수 : ${pDTO.totalRecord }개</div>
 	<ul class="board_list">
 		<li>QA글번호</li>

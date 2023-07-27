@@ -18,7 +18,7 @@ public interface BoardDAO {
 	// 글 수정(update)
 	public int boardEdit(BoardDTO dto);
 	//글 삭제
-	public int boardDel(int no);
+	public int boardDel(int no, String memberId);
 	//첨부파일 목록 삭제
 	public int qaboardfileDelete(int no);
 	//해당글의 첨부 파일 선택

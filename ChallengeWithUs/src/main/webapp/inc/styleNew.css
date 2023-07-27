@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+body{
+	margin: 0px; 
+}
+
+nav{
+	width: 100%;
+	margin: 0px; 
+}
+
+a{
+	text-decoration: none; 
+	
+}
+
+
+.navibar-login {
+  background-color: #3366ff;
+  height: 80px;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+
+}
+
+.navibar-login .frame {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  left: 1024px;
+  position: absolute;
+  top: 21px;
+  width: 251px;
+}
+
+.navibar-login .div {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  position: relative;
+}
+
+.navibar-login .frame-2 {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.navibar-login .line {
+  height: 24px;
+  margin-right: -1px;
+  object-fit: cover;
+  position: relative;
+  width: 1px;
+}
+
+.navibar-login .element-wrapper {
+  align-items: center;
+  background-color: #fbfbfb;
+  border-radius: 32px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  justify-content: center;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.navibar-login .element {
+  color: #151d20;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.navibar-login .div-wrapper {
+  align-items: center;
+  background-color: #fbfbfb;
+  border-radius: 32px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  justify-content: center;
+  margin-right: -26px;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.navibar-login .frame-wrapper {
+  align-items: center;
+  display: inline-flex;
+  gap: 48px;
+  height: 55px;
+  left: 394px;
+  position: absolute;
+  top: 25px;
+}
+
+.navibar-login .frame-3 {
+  align-items: center;
+  align-self: stretch;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 0px 0px;
+  position: relative;
+}
+
+.navibar-login .challenge {
+  color: #fbfbfb;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.navibar-login .img {
+  height: 3px;
+  position: relative;
+  width: 100px;
+}
+
+.navibar-login .logo {
+  height: 30px;
+  left: 116px;
+  object-fit: cover;
+  position: absolute;
+  top: 25px;
+  width: 238px;
+}
+
+
+.footer {
+  align-items: flex-start;
+  background-color: #3366ff;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0px;
+  
+}
+
+.footer .div {
+  align-items: center;
+  background-color: #3366ff;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  height: 226.27px;
+  padding-top: 15px;
+  position: relative;
+  width: 100%;
+  
+  
+}
+
+.footer .logo {
+  height: 41.27px;
+  position: relative;
+  width: 238px;
+}
+
+.footer .frame {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 100px;
+  position: relative;
+}
+
+.footer .frame-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  position: relative;
+}
+
+.footer .text-wrapper {
+  color: #ffffff;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.footer .copyrights-wrapper {
+  align-items: center;
+  background-color: #3366ff;
+  display: flex;
+  gap: 63px;
+  height: 22px;
+  padding: 8px 0px;
+  position: relative;
+  width: 186px;
+}
+
+.footer .copyrights {
+  color: #ffffff;
+  flex: 1;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 27px;
+  margin-bottom: -9.5px;
+  margin-top: -11.5px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+
+@media screen and (max-width:768px){
+	
+	.navibar-login {
+	 flex-direction: column;
+	 align-items: flex-start;
+	 padding: 8px 24px;
+	}
+	
+	
+	.frame-wrapper {
+	 flex-direction: column;
+	 align-items: flex-start;
+	 padding: 8px 24px;
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+

@@ -60,7 +60,7 @@
  </script>
 <main>
 	<h1>게시판 글수정</h1>
-	<form method="post" id="frm" action="/home/board/boardEditOk" enctype="multipart/form-data">
+	<form method="post" id="frm" action="/home/board/qaBoardEditOk" enctype="multipart/form-data">
 	<!-- 현재 수정 글의 글 번호를 폼에 보관... 수정 기준이 되는 레코드 번호로 사용 -->
 	<input type = "hidden" name = "qaNo" value = "${dto.qaNo }"/>
 	<ul>

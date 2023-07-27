@@ -1,0 +1,407 @@
+.main {
+	justify-content: center;
+	align-content: center;
+}
+
+.register-form {
+	background-color: #ffffff;
+	height: 850px;
+	position: relative;
+	width: 754px;
+	margin: 0 auto;
+}
+
+.register-form .sign_font {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 50px;
+	font-weight: 700;
+	left: 292px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	top: 28px;
+	white-space: nowrap;
+	width: 194px;
+}
+
+.register-form .name {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 174px;
+	width: 352px;
+}
+
+.register-form .name_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 183px;
+	width: 104px;
+}
+
+.register-form .phone {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 461px;
+	width: 352px;
+}
+
+.register-form .postnum{
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 521px;
+	width: 130px;
+}
+
+.register-form .conf{
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 380px;
+	position: absolute;
+	top: 521px;
+	width: 185px;
+}
+
+.register-form .phone_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 469px;
+	width: 104px;
+}
+
+.register-form .email {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 401px;
+	width: 352px;
+}
+
+.register-form .email_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 409px;
+	width: 104px;
+}
+
+.register-form .password {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 281px;
+	width: 352px;
+}
+
+.register-form .pw_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 289px;
+	width: 104px;
+}
+
+.register-form .sex_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 236px;
+	width: 104px;
+}
+
+.register-form .radio2 {
+	left: 239px !important;
+	position: absolute !important;
+	top: 241px !important;
+}
+
+.register-form .radio1 {
+	left: 327px !important;
+	position: absolute !important;
+	top: 241px !important;
+}
+
+.register-form .male_font {
+	color: #000000;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 25px;
+	font-weight: 700;
+	left: 213px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	top: 233px;
+	white-space: nowrap;
+	width: 26px;
+}
+
+.register-form .female_font {
+	color: #000000;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 25px;
+	font-weight: 700;
+	left: 298px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	top: 233px;
+	white-space: nowrap;
+	width: 29px;
+}
+
+.register-form .confirm-password {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 341px;
+	width: 352px;
+}
+
+.register-form .pwcon_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 34px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 350px;
+	width: 139px;
+}
+
+.register-form .birthday {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 701px;
+	width: 352px;
+}
+
+.register-form .birth_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 709px;
+	width: 104px;
+}
+
+.register-form .id {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 114px;
+	width: 352px;
+}
+
+.register-form .id_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 123px;
+	width: 104px;
+}
+
+.register-form .double-check {
+	align-items: center;
+	background-color: #3366ff;
+	border-radius: 10px;
+	display: flex;
+	gap: 10px;
+	height: 18px;
+	justify-content: center;
+	left: 590px;
+	overflow: hidden;
+	padding: 10px;
+	position: absolute;
+	top: 117px;
+	width: 67px;
+	cursor: pointer;
+}
+
+.register-form .dochk {
+	color: #ffffff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: normal;
+	margin-bottom: -6px;
+	margin-left: -4.5px;
+	margin-right: -4.5px;
+	margin-top: -8px;
+	position: relative;
+	width: fit-content;
+}
+
+.register-form .address {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 581px;
+	width: 352px;
+}
+
+.register-form .detail_add{
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 10px;
+	height: 40px;
+	left: 213px;
+	position: absolute;
+	top: 641px;
+	width: 352px;
+}
+
+.register-form .add_text {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 68px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 530px;
+	width: 104px;
+}
+
+.register-form .find-address {
+	align-items: center;
+	background-color: #3366ff;
+	border-radius: 10px;
+	display: flex;
+	gap: 10px;
+	height: 18px;
+	justify-content: center;
+	left: 590px;
+	overflow: hidden;
+	padding: 10px;
+	position: absolute;
+	top: 523px;
+	width: 67px;
+	cursor: pointer;
+}
+
+.register-form .fadd_text {
+	color: #ffffff;
+	font-family: "Noto Sans-Bold", Helvetica;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: normal;
+	margin-bottom: -5px;
+	margin-left: -4.5px;
+	margin-right: -4.5px;
+	margin-top: -7px;
+	position: relative;
+	width: fit-content;
+}
+
+.register-form .login-button {
+	align-items: center;
+	background-color: #3366ff;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	height: 30px;
+	justify-content: center;
+	left: 213px;
+	padding: 10px;
+	position: absolute;
+	top: 757px;
+	width: 340px;
+	cursor: pointer;
+}
+
+.register-form .check_text {
+	color: #ffffff;
+	font-family : "Noto Sans KR-Bold", Helvetica;
+	font-size: 25px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: normal;
+	margin-top: -2.5px;
+	position: relative;
+	width: fit-content;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+}

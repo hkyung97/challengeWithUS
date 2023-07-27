@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+.cardtable{
+	
+	margin: 0px 0px 24px 0px; 
+}
+
+.ChallengeCard {
+  width: 384px;
+  height: 548px;
+  position:relative;
+  top:50px; 
+  left: 100px; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex; 
+  padding: 24px; 
+
+}
+
+.ChallengeCard2 {
+  width: 384px;
+  height: 548px;
+  position:relative;
+  top:50px; 
+  left: 100px; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex; 
+  padding: 24px; 
+
+}
+
+/* Fullcard */
+.Fullcard {
+  align-self: stretch;
+  flex: 1 1 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+/* Image2 */
+.Image2 {
+  align-self: stretch;
+  flex: 1 1 0;
+}
+
+/* Content */
+.Content {
+  align-self: stretch;
+  height: 264px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+
+/* Title */
+.Title {
+  align-self: stretch;
+  color: black;
+  font-size: 36px;
+  font-family: Noto Sans KR;
+  font-weight: 400;
+  line-height: 26px;
+  word-wrap: break-word;
+}
+
+/* Description */
+.Description {
+  align-self: stretch;
+  color: #121212;
+  font-size: 18px;
+  font-family: Noto Sans KR;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* Button */
+.Button {
+  align-self: stretch;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #3366FF;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;	
+}
+
+
+/* ButtonText */
+Button {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  line-height: 26px;
+  word-wrap: break-word;
+  border: 0;
+  background-color: transparent;
+  
+}

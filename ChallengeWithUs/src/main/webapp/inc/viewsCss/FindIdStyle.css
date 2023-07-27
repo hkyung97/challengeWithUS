@@ -1,0 +1,172 @@
+.div-wrapper {
+	height: 592px;
+	width: 100%;
+	max-width: 669px;
+	align-content: center;
+	justify-content: center;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+}
+
+.div-wrapper .div {
+	height: 592px;
+	position: relative;
+}
+
+.div-wrapper .overlap-group {
+	border: 3px solid;
+	border-color: #1c43be;
+	border-radius: 20px;
+	box-shadow: 0px 4px 4px #00000040;
+	height: 352px;
+	left: 0;
+	position: absolute;
+	top: 134px;
+	width: 669px;
+	max-width: 669px;
+	overflow: hidden;
+}
+
+.div-wrapper .login-button button {
+	align-items: center;
+	background-color: #3366ff;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	height: 55px;
+	justify-content: center;
+	left: 155px;
+	margin: 1% 0 0 0;
+	position: absolute;
+	top: 240px;
+	width: 364px;
+	cursor: pointer;
+	border: none;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 25px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+.div-wrapper .login-button button:hover {
+	background-color: #2650C0; /* 마우스를 올렸을 때 색상 변화 */
+}
+
+.div-wrapper .login-button button:active {
+	background-color: #20409D; /* 클릭하는 효과로 보이도록 변경 */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 3px 10px
+		rgba(0, 0, 0, 0.6);
+}
+
+.div-wrapper .password-fill {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 20px;
+	height: 55px;
+	left: 159px;
+	position: absolute;
+	top: 162px;
+	width: 352px;
+}
+
+.div-wrapper .username-fill {
+	border: 2px solid;
+	border-color: #3366ff;
+	border-radius: 20px;
+	height: 55px;
+	left: 158px;
+	position: absolute;
+	top: 72px;
+	width: 352px;
+}
+
+.div-wrapper .text-wrapper {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 42px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 177px;
+	width: 102px;
+}
+
+.div-wrapper .element-2 {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	left: 42px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: right;
+	top: 85px;
+	width: 102px;
+}
+
+.div-wrapper .element-3 {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Regular", Helvetica;
+	font-size: 20px;
+	font-weight: 400;
+	left: 375px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: center;
+	top: 303px;
+	white-space: pre-wrap;
+	width: 132px;
+	padding: 1%;
+}
+
+.div-wrapper .element-4 {
+	color: #a1a0bd;
+	font-family: "Noto Sans KR-Regular", Helvetica;
+	font-size: 25px;
+	font-weight: 400;
+	left: 115px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: center;
+	top: 16px;
+	white-space: nowrap;
+	width: 448px;
+}
+
+.div-wrapper .element-5 {
+	color: #a1a0bd;
+	font-family: "Noto Sans KR-Regular", Helvetica;
+	font-size: 20px;
+	font-weight: 400;
+	left: 155px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: center;
+	top: 304px;
+	width: 217px;
+	padding: 1% 2em 0 0;
+}
+
+.div-wrapper .element-6 {
+	color: #3366ff;
+	font-family: "Noto Sans KR-Bold", Helvetica;
+	font-size: 60px;
+	font-weight: 700;
+	left: 159px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	text-align: center;
+	top: 27px;
+	width: 377px;
+}
+

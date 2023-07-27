@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+
+.ChallengeBox-table{
+	display: grid;
+	grid-template-columns: 400px 400px;
+	justify-content: center;
+	top: 50px;
+	bottom: 50px; 
+	padding: 20px
+
+	
+	
+}
+
+.Title {
+    color: black;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    line-height: 150px;
+}
+
+
+.ChallengeBox1, .ChallengeBox2, .ChallengeBox3, .ChallengeBox4 {
+    box-sizing: border-box;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    background: rgba(79, 209, 139, 0.50);
+    box-shadow: 8px 13px 44px -6px #DFDBF6;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 24px 50px 24px 50px; ;
+    padding: 20px
+   
+}
+
+
+.WalletAmount {
+    width: 300px;
+    height: 304px;
+    left: 236px;
+    top: -30px;
+    position: absolute;
+    background: rgba(51, 102, 255, 0.50);
+    border-radius: 155px;
+    overflow: hidden;
+    
+}
+
